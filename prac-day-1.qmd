@@ -1,0 +1,17 @@
+---
+title: "prac-day-1"
+format: html
+---
+
+## Question 1
+
+1. Find all rows in “airquality” that have missing values. Note that the airquality dataset in R is always available (just type airquality in the console to see it).
+
+```{r}
+#| echo: false
+data = airquality
+data_missing <- data[!complete.cases(data), ]
+rownames(data_missing)
+```
+
+
