@@ -44,3 +44,10 @@ beta_hat <- solve(t(X) %*% X) %*% t(X) %*% Y
 beta_hat
 ```
 
+4. Fit the linear regression model using lm() in R to check if the beta estimates are same.
+
+```{r}
+#| echo: false
+fit <- lm(cars$dist ~ cars$speed, data = cars)
+summary(fit)
+```
