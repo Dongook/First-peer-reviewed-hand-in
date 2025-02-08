@@ -14,4 +14,20 @@ data_missing <- data[!complete.cases(data), ]
 rownames(data_missing)
 ```
 
+## Question 2
+
+2. Find mean, sd, min, max for each of temperature and ozone level.
+
+```{r}
+#| echo: false
+data_clean <- data[complete.cases(data), ]
+mean(data_clean$Ozone)
+sd(data_clean$Ozone)
+min(data_clean$Ozone)
+max(data_clean$Ozone)
+mean(data_clean$Temp)
+sd(data_clean$Temp)
+min(data_clean$Temp)
+max(data_clean$Temp)
+```
 
