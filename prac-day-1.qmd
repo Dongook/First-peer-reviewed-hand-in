@@ -31,3 +31,16 @@ min(data_clean$Temp)
 max(data_clean$Temp)
 ```
 
+## Question 3
+
+3. Fit a simple linear regression model to the cars data using the linear regression equation and matrix calculations in R.
+
+```{r}
+#| echo: false
+data(cars)
+X <- cbind(1, cars$speed)
+Y <- cars$dist
+beta_hat <- solve(t(X) %*% X) %*% t(X) %*% Y
+beta_hat
+```
+
