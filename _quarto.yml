@@ -1,5 +1,25 @@
 project:
-  title: "First peer-reviewed hand-in"
+  type: book
+  render:
+  - index.qmd
+  output-dir: _site
+book:
+  title: Statistical Computing
+  sidebar:
+    border: true
+    background: light
+    position: right
+  navbar:
+    search: true
+    background: light
+  chapters:
+  - prac-day-1.qmd
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    toc-location: left
 
 
 
