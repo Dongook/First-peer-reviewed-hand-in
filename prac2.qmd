@@ -15,3 +15,11 @@ x <- 1:100
 y <- sin(x / 10) + rnorm(100, sd = 0.2)
 ```
 
+## 2. Implement the LOWESS Algorithm
+
+- Define a function customLowess(x, y, f) that returns the smoothed values
+
+```{r}
+customLowess <- function(x, y, f) {
+  n <- length(x)
+  smoothed_y <- numeric(n)
