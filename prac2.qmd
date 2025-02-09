@@ -1,0 +1,17 @@
+---
+title: "prac2"
+---
+
+## 1. Generate Simulated Data:
+
+- Set seed to 1
+- Create x as a sequence of numbers of 1 to 100
+- Generate y as noisy sine wave
+
+```{r}
+#| echo: false
+set.seed(1)
+x <- 1:100
+y <- sin(x / 10) + rnorm(100, sd = 0.2)
+```
+
