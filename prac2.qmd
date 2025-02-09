@@ -43,3 +43,23 @@ customLowess <- function(x, y, f) {
   return(smoothed_y)  # Return smoothed values
 }
 ```
+
+## 3. Compare with R's Built-in lowess()
+- Use the built-in lowess() function with the same f value. You will also need to set the iter argument to 0
+- Plot both curves to compare their smoothing values
+
+```{r}
+# Apply custom LOWESS smoothing
+f <- 0.1  # Smoothing parameter
+smoothed_y_custom <- customLowess(x, y, f)
+
+# Apply built-in lowess() smoothing (iter = 0)
+smoothed_y_builtin <- lowess(x, y, f = f, iter = 0)$y
+
+# Visualisation: customLowess와 lowess 비교
+plot(x, y, main = "LOWESS Smoothing Comparison", col = "blue", xlab = "X", ylab = "Y")
+lines(x, smoothed_y_custom, col = "red")  # Smoothed by customLowess
+lines(x, smoothed_y_builtin, col = "green")  # Smoothed by lowess()
+```
+
+Both methods produce similar smoothed results
