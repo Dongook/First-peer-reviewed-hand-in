@@ -23,3 +23,23 @@ y <- sin(x / 10) + rnorm(100, sd = 0.2)
 customLowess <- function(x, y, f) {
   n <- length(x)
   smoothed_y <- numeric(n)
+  for (i in 1:n) {
+    # Compute distances between the current point and all others
+    distances <- abs(x - x[i]) 
+    distances <- abs(x - x[i])  
+    # Apply tricube weight function
+    weights <- (1 - (distances / (max(distances) * f))^3)^3  
+    
+    # Zero out any negative weights
+    weights[weights < 0] <- 0
+    
+    # Apply wighted least squares regression
+    fit <- lm(y ~ x, weights = weights)
+    
+    # Get predicted value for the current point
+    smoothed_y[i] <- predict(fit, newdata = data.frame(x = x[i]))
+  }
+  
+  return(smoothed_y)  # Return smoothed values
+}
+```
