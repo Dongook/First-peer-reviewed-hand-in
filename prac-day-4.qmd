@@ -41,3 +41,12 @@ flights |> filter(month == 1, carrier == 'OO') |> select(carrier, distance)
 #| echo: false
 flights |> filter(month ==1, carrier == 'F9') |> select(carrier, distance) 
 ```
+
+## Using tidyr and dplyr where appropriate, construct a dataframe where the carriers are along the columns, and the rows are the average departure delay (dep_delay) flown by each carrier (carrier) in each month.
+
+```{r}
+#| echo: false
+library(tidyr)
+flights |> group_by(month, carrier) |> summarise(avg_dep_delay = mean(dep_delay), .groups = 'drop') |> pivot_wider(names_from = carrier, values_from = avg_dep_delay)
+```
+
