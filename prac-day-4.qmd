@@ -50,3 +50,11 @@ library(tidyr)
 flights |> group_by(month, carrier) |> summarise(avg_dep_delay = mean(dep_delay), .groups = 'drop') |> pivot_wider(names_from = carrier, values_from = avg_dep_delay)
 ```
 
+## Calculate the proportion of flights that were delayed (dep_delay greater than 0) but arrived on or before time (arr_delay less than or equal to 0).
+
+```{r}
+#| echo: false
+proportion <- flights |> filter(dep_delay > 0 & arr_delay <= 0) |> count() |> pull(n)/nrow(flights)
+print(proportion)
+```
+
