@@ -1,10 +1,8 @@
 project:
   type: book
-  render:
-  - index.qmd
   output-dir: _site
 book:
-  title: Statistical Computing
+  title: First peer-reviewed hand-in
   sidebar:
     border: true
     background: light
@@ -13,7 +11,10 @@ book:
     search: true
     background: light
   chapters:
+  - index.qmd
   - prac-day-1.qmd
+  - prac2.qmd
+  - prac-day-4.qmd
 format:
   html:
     theme: cosmo
