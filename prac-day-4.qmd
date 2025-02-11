@@ -1,0 +1,13 @@
+---
+title: "prac-day-four"
+---
+
+## Display the flights dataset in an alternative format to simply printing it (i.e. running flights).
+
+```{r}
+#| echo: false
+library(nycflights13)
+library(dplyr)
+library(tibble)
+print(flights)
+```
