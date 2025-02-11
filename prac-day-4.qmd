@@ -27,3 +27,17 @@ dist_tbl <- flights |>
 dist_tbl
 ```
 
+## Explain why the standard deviation is NA for one carrier, and why it is 0 for others. Demonstrate your answer using code.
+
+1) For carrier 'OO' there is only one value hence sd is NA.
+```{r}
+#| echo: false
+flights |> filter(month == 1, carrier == 'OO') |> select(carrier, distance) 
+```
+
+2) For carrier 'F9' and other carriers with sd 0 have the same distance values hence sd is 0.
+
+```{r}
+#| echo: false
+flights |> filter(month ==1, carrier == 'F9') |> select(carrier, distance) 
+```
