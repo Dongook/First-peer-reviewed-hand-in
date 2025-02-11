@@ -11,3 +11,19 @@ library(dplyr)
 library(tibble)
 print(flights)
 ```
+
+## Rewrite this code using dplyr and the pipe:
+
+```{r}
+dist_tbl <- flights |>
+  filter(month == 1) |>
+  group_by(carrier) |>
+  summarise(
+    mean_distance = mean(distance),
+    sd_distance = sd(distance),
+    .groups = "drop"
+  ) |>
+  arrange(mean_distance)
+dist_tbl
+```
+
