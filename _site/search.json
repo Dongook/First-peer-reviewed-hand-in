@@ -1,0 +1,162 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "First peer-reviewed hand-in",
+    "section": "",
+    "text": "This is First peer-reviewed hand-in which consists of Prac 1, Prac 2 and Practical Day Four.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>First peer-reviewed hand-in</span>"
+    ]
+  },
+  {
+    "objectID": "prac-day-1.html",
+    "href": "prac-day-1.html",
+    "title": "2  prac-day-1",
+    "section": "",
+    "text": "2.1 Question 1\n[1] \"5\"   \"6\"   \"10\"  \"11\"  \"25\"  \"26\"  \"27\"  \"32\"  \"33\"  \"34\"  \"35\"  \"36\" \n[13] \"37\"  \"39\"  \"42\"  \"43\"  \"45\"  \"46\"  \"52\"  \"53\"  \"54\"  \"55\"  \"56\"  \"57\" \n[25] \"58\"  \"59\"  \"60\"  \"61\"  \"65\"  \"72\"  \"75\"  \"83\"  \"84\"  \"96\"  \"97\"  \"98\" \n[37] \"102\" \"103\" \"107\" \"115\" \"119\" \"150\"",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>prac-day-1</span>"
+    ]
+  },
+  {
+    "objectID": "prac-day-1.html#question-1",
+    "href": "prac-day-1.html#question-1",
+    "title": "2  prac-day-1",
+    "section": "",
+    "text": "Find all rows in “airquality” that have missing values. Note that the airquality dataset in R is always available (just type airquality in the console to see it).",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>prac-day-1</span>"
+    ]
+  },
+  {
+    "objectID": "prac-day-1.html#question-2",
+    "href": "prac-day-1.html#question-2",
+    "title": "2  prac-day-1",
+    "section": "2.2 Question 2",
+    "text": "2.2 Question 2\n\nFind mean, sd, min, max for each of temperature and ozone level.\n\n\n\n[1] 42.0991\n\n\n[1] 33.27597\n\n\n[1] 1\n\n\n[1] 168\n\n\n[1] 77.79279\n\n\n[1] 9.529969\n\n\n[1] 57\n\n\n[1] 97",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>prac-day-1</span>"
+    ]
+  },
+  {
+    "objectID": "prac-day-1.html#question-3",
+    "href": "prac-day-1.html#question-3",
+    "title": "2  prac-day-1",
+    "section": "2.3 Question 3",
+    "text": "2.3 Question 3\n\nFit a simple linear regression model to the cars data using the linear regression equation and matrix calculations in R.\n\n\n\n           [,1]\n[1,] -17.579095\n[2,]   3.932409",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>prac-day-1</span>"
+    ]
+  },
+  {
+    "objectID": "prac-day-1.html#question-4",
+    "href": "prac-day-1.html#question-4",
+    "title": "2  prac-day-1",
+    "section": "2.4 Question 4",
+    "text": "2.4 Question 4\n\nFit the linear regression model using lm() in R to check if the beta estimates are same.\n\n\n\n\nCall:\nlm(formula = cars$dist ~ cars$speed, data = cars)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-29.069  -9.525  -2.272   9.215  43.201 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) -17.5791     6.7584  -2.601   0.0123 *  \ncars$speed    3.9324     0.4155   9.464 1.49e-12 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 15.38 on 48 degrees of freedom\nMultiple R-squared:  0.6511,    Adjusted R-squared:  0.6438 \nF-statistic: 89.57 on 1 and 48 DF,  p-value: 1.49e-12",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>prac-day-1</span>"
+    ]
+  },
+  {
+    "objectID": "prac2.html",
+    "href": "prac2.html",
+    "title": "3  prac2",
+    "section": "",
+    "text": "3.1 Generate Simulated Data:\nset.seed(1)\nx &lt;- 1:100\ny &lt;- sin(x / 10) + rnorm(100, sd = 0.2)",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>prac2</span>"
+    ]
+  },
+  {
+    "objectID": "prac2.html#generate-simulated-data",
+    "href": "prac2.html#generate-simulated-data",
+    "title": "3  prac2",
+    "section": "",
+    "text": "Set seed to 1\nCreate x as a sequence of numbers of 1 to 100\nGenerate y as noisy sine wave",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>prac2</span>"
+    ]
+  },
+  {
+    "objectID": "prac2.html#implement-the-lowess-algorithm",
+    "href": "prac2.html#implement-the-lowess-algorithm",
+    "title": "3  prac2",
+    "section": "3.2 Implement the LOWESS Algorithm",
+    "text": "3.2 Implement the LOWESS Algorithm\n\nDefine a function customLowess(x, y, f) that returns the smoothed values\n\n\ncustomLowess &lt;- function(x, y, f) {\n  n &lt;- length(x)\n  smoothed_y &lt;- numeric(n)\n  for (i in 1:n) {\n    # Compute distances between the current point and all others\n    distances &lt;- abs(x - x[i]) \n    # Apply tricube weight function\n    weights &lt;- (1 - (distances / (max(distances) * f))^3)^3  \n    \n    # Zero out any negative weights\n    weights[weights &lt; 0] &lt;- 0\n    \n    # Apply wighted least squares regression\n    fit &lt;- lm(y ~ x, weights = weights)\n    \n    # Get predicted value for the current point\n    smoothed_y[i] &lt;- predict(fit, newdata = data.frame(x = x[i]))\n  }\n  \n  return(smoothed_y)  # Return smoothed values\n}",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>prac2</span>"
+    ]
+  },
+  {
+    "objectID": "prac2.html#compare-with-rs-built-in-lowess",
+    "href": "prac2.html#compare-with-rs-built-in-lowess",
+    "title": "3  prac2",
+    "section": "3.3 Compare with R’s Built-in lowess()",
+    "text": "3.3 Compare with R’s Built-in lowess()\n\nUse the built-in lowess() function with the same f value. You will also need to set the iter argument to 0\nPlot both curves to compare their smoothing values\n\n\n\n\n\n\n\n\n\n\nBoth methods produce similar smoothed results",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>prac2</span>"
+    ]
+  },
+  {
+    "objectID": "prac-day-4.html",
+    "href": "prac-day-4.html",
+    "title": "4  prac-day-four",
+    "section": "",
+    "text": "4.1 Display the flights dataset in an alternative format to simply printing it (i.e. running flights).\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\n\n# A tibble: 336,776 × 19\n    year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time\n   &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;\n 1  2013     1     1      517            515         2      830            819\n 2  2013     1     1      533            529         4      850            830\n 3  2013     1     1      542            540         2      923            850\n 4  2013     1     1      544            545        -1     1004           1022\n 5  2013     1     1      554            600        -6      812            837\n 6  2013     1     1      554            558        -4      740            728\n 7  2013     1     1      555            600        -5      913            854\n 8  2013     1     1      557            600        -3      709            723\n 9  2013     1     1      557            600        -3      838            846\n10  2013     1     1      558            600        -2      753            745\n# ℹ 336,766 more rows\n# ℹ 11 more variables: arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;int&gt;,\n#   tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;,\n#   hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>prac-day-four</span>"
+    ]
+  },
+  {
+    "objectID": "prac-day-4.html#rewrite-this-code-using-dplyr-and-the-pipe",
+    "href": "prac-day-4.html#rewrite-this-code-using-dplyr-and-the-pipe",
+    "title": "4  prac-day-four",
+    "section": "4.2 Rewrite this code using dplyr and the pipe:",
+    "text": "4.2 Rewrite this code using dplyr and the pipe:\n\ndist_tbl &lt;- flights |&gt;\n  filter(month == 1) |&gt;\n  group_by(carrier) |&gt;\n  summarise(\n    mean_distance = mean(distance),\n    sd_distance = sd(distance),\n    .groups = \"drop\"\n  ) |&gt;\n  arrange(mean_distance)\ndist_tbl\n\n# A tibble: 16 × 3\n   carrier mean_distance sd_distance\n   &lt;chr&gt;           &lt;dbl&gt;       &lt;dbl&gt;\n 1 YV               229          0  \n 2 9E               476.       334. \n 3 EV               522.       294. \n 4 US               536.       553. \n 5 MQ               566.       223. \n 6 FL               691.       142. \n 7 OO               733         NA  \n 8 WN               942.       496. \n 9 B6              1062.       681. \n10 DL              1220.       644. \n11 AA              1350.       626. \n12 UA              1462.       778. \n13 F9              1620          0  \n14 AS              2402          0  \n15 VX              2495.        98.2\n16 HA              4983          0",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>prac-day-four</span>"
+    ]
+  },
+  {
+    "objectID": "prac-day-4.html#explain-why-the-standard-deviation-is-na-for-one-carrier-and-why-it-is-0-for-others.-demonstrate-your-answer-using-code.",
+    "href": "prac-day-4.html#explain-why-the-standard-deviation-is-na-for-one-carrier-and-why-it-is-0-for-others.-demonstrate-your-answer-using-code.",
+    "title": "4  prac-day-four",
+    "section": "4.3 Explain why the standard deviation is NA for one carrier, and why it is 0 for others. Demonstrate your answer using code.",
+    "text": "4.3 Explain why the standard deviation is NA for one carrier, and why it is 0 for others. Demonstrate your answer using code.\n\nFor carrier ‘OO’ there is only one value hence sd is NA.\n\n\n\n# A tibble: 1 × 2\n  carrier distance\n  &lt;chr&gt;      &lt;dbl&gt;\n1 OO           733\n\n\n\nFor carrier ‘F9’ and other carriers with sd 0 have the same distance values hence sd is 0.\n\n\n\n# A tibble: 59 × 2\n   carrier distance\n   &lt;chr&gt;      &lt;dbl&gt;\n 1 F9          1620\n 2 F9          1620\n 3 F9          1620\n 4 F9          1620\n 5 F9          1620\n 6 F9          1620\n 7 F9          1620\n 8 F9          1620\n 9 F9          1620\n10 F9          1620\n# ℹ 49 more rows",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>prac-day-four</span>"
+    ]
+  },
+  {
+    "objectID": "prac-day-4.html#using-tidyr-and-dplyr-where-appropriate-construct-a-dataframe-where-the-carriers-are-along-the-columns-and-the-rows-are-the-average-departure-delay-dep_delay-flown-by-each-carrier-carrier-in-each-month.",
+    "href": "prac-day-4.html#using-tidyr-and-dplyr-where-appropriate-construct-a-dataframe-where-the-carriers-are-along-the-columns-and-the-rows-are-the-average-departure-delay-dep_delay-flown-by-each-carrier-carrier-in-each-month.",
+    "title": "4  prac-day-four",
+    "section": "4.4 Using tidyr and dplyr where appropriate, construct a dataframe where the carriers are along the columns, and the rows are the average departure delay (dep_delay) flown by each carrier (carrier) in each month.",
+    "text": "4.4 Using tidyr and dplyr where appropriate, construct a dataframe where the carriers are along the columns, and the rows are the average departure delay (dep_delay) flown by each carrier (carrier) in each month.\n\n\n# A tibble: 12 × 17\n   month  `9E`    AA     AS    B6    DL    EV    F9    FL    HA    MQ    OO\n   &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n 1     1    NA    NA  7.35     NA    NA    NA 10     NA   54.4     NA  67  \n 2     2    NA    NA NA        NA    NA    NA NA     NA   17.4     NA  NA  \n 3     3    NA    NA  8.42     NA    NA    NA 16.8   NA    1.16    NA  NA  \n 4     4    NA    NA 11.3      NA    NA    NA 24.6   NA   -2.1     NA  NA  \n 5     5    NA    NA  6.77     NA    NA    NA 35.9   NA   -1.45    NA  NA  \n 6     6    NA    NA 13.1      NA    NA    NA 29.4   NA    1.47    NA  61  \n 7     7    NA    NA  2.42     NA    NA    NA 31.8   NA   -1.71    NA  NA  \n 8     8    NA    NA  2.87     NA    NA    NA 22.2   NA    1.68    NA  64  \n 9     9    NA    NA -4.52     NA    NA    NA NA     NA   -5.44    NA  NA  \n10    10    NA    NA  0.677    NA    NA    NA  9.70  NA   -5.10    NA  NA  \n11    11    NA    NA  3.08     NA    NA    NA NA     16.9 -5.44    NA   0.8\n12    12    NA    NA 18.0      NA    NA    NA 13.1   NA   -3.14    NA  NA  \n# ℹ 5 more variables: UA &lt;dbl&gt;, US &lt;dbl&gt;, VX &lt;dbl&gt;, WN &lt;dbl&gt;, YV &lt;dbl&gt;",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>prac-day-four</span>"
+    ]
+  },
+  {
+    "objectID": "prac-day-4.html#calculate-the-proportion-of-flights-that-were-delayed-dep_delay-greater-than-0-but-arrived-on-or-before-time-arr_delay-less-than-or-equal-to-0.",
+    "href": "prac-day-4.html#calculate-the-proportion-of-flights-that-were-delayed-dep_delay-greater-than-0-but-arrived-on-or-before-time-arr_delay-less-than-or-equal-to-0.",
+    "title": "4  prac-day-four",
+    "section": "4.5 Calculate the proportion of flights that were delayed (dep_delay greater than 0) but arrived on or before time (arr_delay less than or equal to 0).",
+    "text": "4.5 Calculate the proportion of flights that were delayed (dep_delay greater than 0) but arrived on or before time (arr_delay less than or equal to 0).\n\n\n[1] 0.1052391",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>prac-day-four</span>"
+    ]
+  },
+  {
+    "objectID": "prac-day-4.html#using-the-airlines-and-flights-datasets-do-the-following-showing-the-output-from-each-step",
+    "href": "prac-day-4.html#using-the-airlines-and-flights-datasets-do-the-following-showing-the-output-from-each-step",
+    "title": "4  prac-day-four",
+    "section": "4.6 Using the airlines and flights datasets, do the following, showing the output from each step:",
+    "text": "4.6 Using the airlines and flights datasets, do the following, showing the output from each step:\nIdentify routes that more than one airline flies\n\n\n# A tibble: 128 × 3\n   origin dest  airlines_count\n   &lt;chr&gt;  &lt;chr&gt;          &lt;int&gt;\n 1 EWR    ATL                4\n 2 EWR    AUS                2\n 3 EWR    BDL                2\n 4 EWR    BNA                2\n 5 EWR    BOS                3\n 6 EWR    BWI                2\n 7 EWR    CHS                2\n 8 EWR    CLE                2\n 9 EWR    CLT                3\n10 EWR    CVG                2\n# ℹ 118 more rows\n\n\nFor each such route, calculate the average arrival delay for each airline (exclude NAs). Find the names of these airlines.\n\n\n# A tibble: 343 × 4\n   origin dest  carrier avg_arr_delay\n   &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;           &lt;dbl&gt;\n 1 EWR    ATL   9E              -6.25\n 2 EWR    ATL   DL              10.0 \n 3 EWR    ATL   EV              19.5 \n 4 EWR    ATL   UA              10.5 \n 5 EWR    AUS   UA               4.28\n 6 EWR    AUS   WN             -11.2 \n 7 EWR    BDL   EV               6.78\n 8 EWR    BDL   UA              22.6 \n 9 EWR    BNA   EV              17.7 \n10 EWR    BNA   WN              -2.13\n# ℹ 333 more rows\n\n\nFor each such route, identify the airline with the worst and best average arrival delay.\n\n\n# A tibble: 128 × 7\n   origin dest  best_airline best_delay worst_airline worst_delay\n   &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt; &lt;chr&gt;               &lt;dbl&gt;\n 1 EWR    ATL   9E               -6.25  EV                  19.5 \n 2 EWR    AUS   WN              -11.2   UA                   4.28\n 3 EWR    BDL   EV                6.78  UA                  22.6 \n 4 EWR    BNA   WN               -2.13  EV                  17.7 \n 5 EWR    BOS   EV               -4.01  B6                   6.87\n 6 EWR    BWI   WN                5.95  EV                  20.1 \n 7 EWR    CHS   UA              -14     EV                  16.2 \n 8 EWR    CLE   EV               -3.71  UA                   5.97\n 9 EWR    CLT   US                0.920 EV                  20.5 \n10 EWR    CVG   9E                1.40  EV                  21.2 \n# ℹ 118 more rows\n# ℹ 1 more variable: delay_difference &lt;dbl&gt;\n\n\nIdentify the route with the greatest difference between the best and worst performing airlines\n\n\n# A tibble: 0 × 7\n# ℹ 7 variables: origin &lt;chr&gt;, dest &lt;chr&gt;, best_airline &lt;chr&gt;,\n#   best_delay &lt;dbl&gt;, worst_airline &lt;chr&gt;, worst_delay &lt;dbl&gt;,\n#   delay_difference &lt;dbl&gt;",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>prac-day-four</span>"
+    ]
+  }
+]
